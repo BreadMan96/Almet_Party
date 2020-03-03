@@ -2,7 +2,7 @@ require 'rubygems'
 require 'sinatra'
 
 get '/' do 
-  erb 'Главная типо страница'
+  erb :index 
 end
 
 get '/event' do
