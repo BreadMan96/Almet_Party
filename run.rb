@@ -1,5 +1,7 @@
 require 'rubygems'
 require 'sinatra'
+require 'sinatra/reloader'
+require 'sinatra/activerecord'
 
 get '/' do 
   erb :index 
@@ -10,9 +12,9 @@ get '/event' do
 end
 
 get '/contacts' do
-  erb 'Тут типо наши контакты'
+  erb 'Тут типо наши контакты asddsa'
 end
 
 get '/proba' do
-  erb 'тут типо испытываем всякую хрень'
+  erb :proba
 end
