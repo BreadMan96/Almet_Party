@@ -8,11 +8,11 @@ get '/' do
 end
 
 get '/event' do
-  erb 'Тут типо тусы'
+  erb :event
 end
 
 get '/contacts' do
-  erb 'Тут типо наши контакты asddsa'
+  erb :contacts
 end
 
 get '/proba' do

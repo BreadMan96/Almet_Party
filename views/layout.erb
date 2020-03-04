@@ -35,9 +35,34 @@
       </ul>
     </ul>
 
-    <div class="footer">
-      <p>Сотрудничество: almet-event@gmail.com</p>
+    <!-- Кнопка войти -->
+    <div id="id01" class="modal">
+      <form class="modal-content animate" action="/action_page.php" method="post">
+        <div class="imgcontainer">
+          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+          <img src="img_avatar2.png" alt="Avatar" class="avatar">
+        </div>
+
+        <div class="container">
+          <label for="uname"><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" name="uname" required>
+
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" required>
+            
+          <button type="submit">Login</button>
+          <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+          </label>
+        </div>
+
+        <div class="container" style="background-color:#f1f1f1">
+          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+          <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+      </form>
     </div>
+    <!-- Кнопка войти -->
 
     <div>
       <%if @error then %>
@@ -45,6 +70,17 @@
       <% end %>
     </div>
     <%= yield %>
+
+    <!-- Футер -->
+    <footer>
+      <div class="footer">
+      <div class="content">
+        Сотрудничество: <a href="mailto:almet-event@gmail.com"> almet-event@gmail.com </a>
+      </div>
+      </div>
+    </footer>
+    <!-- Футер -->
+  
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
