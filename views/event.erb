@@ -1,28 +1,21 @@
-<table class="table table-bordered">
-  <% @list.each do |row| %>
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Имя и Фамилия</th>
-        <th scope="col">Телефон</th>
-        <th scope="col">Почта</th>
-        <th scope="col">Описание</th>
-        <th scope="col">Начало</th>
-        <th scope="col">Окончание</th>
-        <th scope="col">Кол-во гостей</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row"> <%= row['ID'] %> </th>
-        <td><%= row['Name'] %></td>
-        <td><%= row['Phone'] %></td>
-        <td><%= row['Email'] %></td>
-        <td><%= row['Description'] %></td>
-        <td><%= row['Date_Stamp_Start'] %></td>
-        <td><%= row['Date_Stamp_Finish'] %></td>
-        <td><%= row['Guests'] %></td>
-      </tr>
-    </tbody>
-  <% end %>
-</table>
+<% @list_two.each do |row| %>
+  <div class="card">
+    <div class="card-body" align="center">
+      <h5 class="card-title"><%= row['Party_name'] %></h5>
+      <p class="card-text"><%= row['Description'] %></p>
+      <a href="/event/<%= row['ID'] %>" class="btn btn-primary">Подробнее</a>
+      <br/>
+      <br/>
+      <div class="flex">
+        <small class="form-text text-muted"> Место встречи: <%= row['Location'] %> </small>
+        <small class="form-text text-muted"> Дата публикации: <%= row['Created_Date'] %> </small>
+      </div>
+    </div>
+  </div>
+  <div class="card-header" align="center">
+      Даты встречи: с <%= row['Date_Stamp_Start'] %> до <%= row['Date_Stamp_Finish'] %> 
+  </div>
+  <hr/>
+  <br/>
+  <hr/>
+<% end %>

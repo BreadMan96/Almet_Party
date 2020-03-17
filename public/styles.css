@@ -18,12 +18,13 @@
   height: 100px;
 }
 
-#aaa {
-  background-color: yellow;
-}
-
 .red {
   color: red;
+}
+
+.flex {
+   display: flex;
+   justify-content: space-between;
 }
 
 /*body {

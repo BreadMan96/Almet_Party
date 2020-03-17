@@ -1,0 +1,51 @@
+<h2 align="center"> Детали встречи: </h2>
+<br/>
+
+<div class="card">
+  <div class="card-header" align="center">
+    <h5> <b> <%= @row['Party_name'] %> </b></h5>
+  </div>
+  <div class="card-body" align="center">
+    <h5 class="card-title"><%= @row['Name'] %></h5>
+    <p class="card-text"><%= @row['Description'] %></p>
+    <small class="form-text text-muted">Дата публикации: <%= @row['Created_Date'] %></small>
+  </div>
+</div>
+
+
+<br/>
+<h4 align="center"> Оставить комментарий </h4>
+<hr/>
+<form action="/event/<%= @row['ID'] %>" method="POST">
+  <div class="form-group row">
+    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Ваше имя:</label>
+    <div class="col-sm-10">
+      <input style="width: 250px; height: 30px" type="text" class="form-control form-control-sm" name="username" id="colFormLabelSm" placeholder="Введите Ваше имя или ник" required>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="colFormLabel" class="col-sm-2 col-form-label">Ваш комментарий:</label>
+    <div class="col-sm-10">
+     <textarea style="width: 550px; height: 150px" class="form-control" id="colFormLabel" rows="3" name="comment" maxlength="200" required placeholder="Напишите Ваш комментарий" value="<%= @comment %>"></textarea>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="col-sm-10">
+      <button type="submit" class="btn btn-primary">Опубликовать комментарий</button>
+    </div>
+  </div>
+
+</form>
+
+
+
+<h4 align="center"> Комментарии </h4>
+<br/>
+
+<% @comment_for_event.each do |comme| %>
+  <p><b> <%= comme['Name'] %> </b></p>
+  <p> <%= comme['Comment'] %> </p>
+  <small class="inform-text text-muted"> <%= comme['Created_Date'] %> </small>
+  <hr/>
+<% end %>
